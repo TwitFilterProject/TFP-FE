@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 import logo from '../Images/logo.png';
+import cleansLogo from '../Images/cleans-logo.png';
 import home from '../Images/home.png';
+import chat from '../Images/chat.png';
 import searchIcon from '../Images/search.png';
 import profile from '../Images/profile-user.png';
+
 import styled from "styled-components";
 
 // 스타일 컴포넌트 정의
@@ -88,6 +94,7 @@ const Navigator = styled.div`
 `;
 
 const NavItem = styled.div`
+    width: 100%;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -152,17 +159,29 @@ const PostText = styled.p`
 `;
 
 const Main = () => {
+    const nav = useNavigate();
+
     const [search, setSearch] = useState("");
+    const [posts, setPost] = useState(null);
 
     const onChange = (e) => {
         setSearch(e.target.value);
     };
 
     // 샘플 게시물 데이터
-    const posts = [
-        { id: 1, nickname: "User1", text: "이것은 첫 번째 게시물입니다." },
-        { id: 2, nickname: "User2", text: "여기는 두 번째 게시물입니다." },
-    ];
+    // const posts = [
+    //     { id: 1, nickname: "User1", text: "이것은 첫 번째 게시물입니다." },
+    //     { id: 2, nickname: "User2", text: "여기는 두 번째 게시물입니다." },
+    // ];
+
+    const getPosts = async () => {
+        const posts = await axios.get("http://localhost:8080/getFeed");
+        setPost(posts.data);
+    }
+
+    useEffect(() => {
+        getPosts();
+    }, [])
 
     return (
         <Container>
@@ -190,25 +209,32 @@ const Main = () => {
                         <NavIcon src={home} alt="home"/>
                         <span>Home</span>
                     </NavItem>
+                    <NavItem onClick={() => {nav("/chat")}}>
+                        <NavIcon src={chat} alt="chat"/>
+                        <span>Chat</span>
+                    </NavItem>
                     <NavItem>
                         <NavIcon src={profile} alt="profile"/>
                         <span>Profile</span>
                     </NavItem>
                 </Navigator>
                 <MainSection>
-                    {posts.map(post => (
-                        <PostContainer key={post.id}>
-                            <PostHeader>
-                                <PostProfile>
-                                    <ProfileImg src={profile} alt="profile"/>
-                                    <Nickname>{post.nickname}</Nickname>
-                                </PostProfile>
-                            </PostHeader>
-                            <PostContent>
-                                <PostText>{post.text}</PostText>
-                            </PostContent>
-                        </PostContainer>
-                    ))}
+                    {posts && posts.map((post) => {
+                        return(
+                            <PostContainer key={post.id}>
+                                <PostHeader>
+                                    <PostProfile>
+                                        <ProfileImg src={profile} alt="profile"/>
+                                        {/* <Nickname>{post.nickname}</Nickname> */}
+                                        <Nickname>SookmyungCleans</Nickname>
+                                    </PostProfile>
+                                </PostHeader>
+                                <PostContent>
+                                    <PostText>{post.message}</PostText>
+                                </PostContent>
+                            </PostContainer>
+                        )
+                    })}
                 </MainSection>
             </MainContent>
         </Container>
