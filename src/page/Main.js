@@ -12,18 +12,18 @@ import profile from '../Images/profile-user.png';
 import styled from "styled-components";
 
 // 스타일 컴포넌트 정의
-const Container = styled.div`
+export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 `;
 
-const PostProfile = styled.div`
+export const PostProfile = styled.div`
     display: flex;
 `;
 
-const TopSection = styled.div`
+export const TopSection = styled.div`
     display: flex;
     width: 100%;
     padding: 10px;
@@ -31,19 +31,19 @@ const TopSection = styled.div`
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
-const LogoContainer = styled.div`
+export const LogoContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 20px; /* 로고에 왼쪽 마진 추가 */
 `;
 
-const Logo = styled.img`
+export const Logo = styled.img`
     width: 60px;
     height: 60px;
 `;
 
-const Header = styled.div`
+export const Header = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +51,7 @@ const Header = styled.div`
     padding: 10px;
 `;
 
-const SearchBar = styled.div`
+export const SearchBar = styled.div`
     display: flex;
     align-items: center;
     background-color: white;
@@ -61,7 +61,7 @@ const SearchBar = styled.div`
     width: 100%;
 `;
 
-const SearchInput = styled.input`
+export const SearchInput = styled.input`
     border: none;
     outline: none;
     flex: 1;
@@ -70,18 +70,18 @@ const SearchInput = styled.input`
     font-size: 16px;
 `;
 
-const SearchIcon = styled.img`
+export const SearchIcon = styled.img`
     width: 24px;
     height: 24px;
 `;
 
-const MainContent = styled.div`
+export const MainContent = styled.div`
     display: flex;
     width: 100%;
     margin-top: 20px;
 `;
 
-const Navigator = styled.div`
+export const Navigator = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,7 +93,7 @@ const Navigator = styled.div`
     top: 60px; // TopSection 높이
 `;
 
-const NavItem = styled.div`
+export const NavItem = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
@@ -105,14 +105,14 @@ const NavItem = styled.div`
     }
 `;
 
-const NavIcon = styled.img`
+export const NavIcon = styled.img`
     width: 30px;
     height: 30px;
     margin-right: 10px;
     margin-left: 20px; /* 네비게이터 아이콘에 왼쪽 마진 추가 */
 `;
 
-const MainSection = styled.div`
+export const MainSection = styled.div`
     flex: 1;
     padding: 20px;
     background-color: #f8f9fa;
@@ -205,7 +205,7 @@ const Main = () => {
 
             <MainContent>
                 <Navigator>
-                    <NavItem>
+                    <NavItem onClick={(() => {nav("/")})} >
                         <NavIcon src={home} alt="home"/>
                         <span>Home</span>
                     </NavItem>
