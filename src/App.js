@@ -1,13 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Main from './page/Main';
+import Chat from './page/Chat';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <Main />
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='/chat' element={<Chat />} />
+      </Routes>
     </div>
+    </Router>
   );
 }
 
