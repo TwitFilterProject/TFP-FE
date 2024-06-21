@@ -1,80 +1,71 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+TFP-FE (프론트엔드)
 =======
->>>>>>> bf248a51f37c7d78c38102467f1635654adc74e3
-# Getting Started with Create React App
+이 프로젝트는 폭력적인 언어에 무방비하게 노출되는 아동·청소년들을 위한 SNS 필터링 프로그램이다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+본 서비스는 학습된 데이터, 백엔드와 연결하여 도출된 결과를 출력, React를 사용해 UI를 제작, 디자인한다.
 
-## Available Scripts
+**주요기능**
+1) Facebook api를 통해 불러와진 데이터를 Main 화면에 배치, 폭력적이거나 선정적인 데이터를 가린다.
+2) 닉네임을 입력 후 채팅방 입장, 입장 후 채팅 기능 사용시 폭력적이거나 선정적인 문구를 가린다.
+3) 폭력적인 이미지를 구별한다.
 
-In the project directory, you can run:
+## 설치 방법
 
-### `npm start`
+1. 레포지토리를 클론합니다.
+    ```bash
+    git clone https://github.com/TwitFilterProject/TFP-FE.git
+    cd TFP-FE
+    ```
+    
+2. 필요한 패키지를 설치합니다.
+    ```bash
+    npm install
+    ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. 서비스를 실행합니다
+   ```bash
+    npm start
+    ```
+   
+## 라이센스
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**React**
+MIT License
 
-### `npm test`
+Copyright (c) 2024 김서윤
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Permission is hereby granted, free of charge, to any person obtaining a copy
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+of this software and associated documentation files (the "Software"), to deal
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+in the Software without restriction, including without limitation the rights
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 
-### `npm run eject`
+copies of the Software, and to permit persons to whom the Software is
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+furnished to do so, subject to the following conditions:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+     
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The above copyright notice and this permission notice shall be included in all
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+copies or substantial portions of the Software.
 
-## Learn More
+     
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 
-### Code Splitting
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 
-### Analyzing the Bundle Size
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 
-### Making a Progressive Web App
+SOFTWARE.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-<<<<<<< HEAD
-=======
-# TFP-FE
->>>>>>> ba17446434c8c6021d0a6e9a0ae6bb559459c2c2
-=======
->>>>>>> bf248a51f37c7d78c38102467f1635654adc74e3
