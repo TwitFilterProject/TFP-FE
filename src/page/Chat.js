@@ -12,6 +12,7 @@ import home from '../Images/home.png';
 import chat from '../Images/chat.png';
 import searchIcon from '../Images/search.png';
 import profile from '../Images/profile-user.png';
+import photo from '../Images/photo.png'
 
 // styled
 
@@ -272,7 +273,7 @@ const Chat = () => {
         <Container>
             <TopSection>
                 <LogoContainer>
-                    <Logo src={logo} alt="logo"/>
+                    <Logo src={cleansLogo} alt="logo"/>
                 </LogoContainer>
 
                 <Header>
@@ -293,6 +294,10 @@ const Chat = () => {
                     <NavItem onClick={(() => {nav("/")})}>
                         <NavIcon  src={home} alt="home"/>
                         <span>Home</span>
+                    </NavItem>
+                    <NavItem onClick={() => {nav("/photo")}}>
+                        <NavIcon src={photo} alt="photo"/>
+                        <span>Photo</span>
                     </NavItem>
                     <NavItem onClick={() => {nav("/chat")}}>
                         <NavIcon src={chat} alt="chat"/>

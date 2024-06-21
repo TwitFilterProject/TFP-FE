@@ -10,6 +10,8 @@ import searchIcon from '../Images/search.png';
 import profile from '../Images/profile-user.png';
 import photo from '../Images/photo.png'
 
+import {violencePhotos} from '../ImagesForViolence/index.js'
+
 import styled from "styled-components";
 
 // 스타일 컴포넌트 정의
@@ -121,7 +123,7 @@ export const MainSection = styled.div`
 `;
 
 // 게시물 스타일 컴포넌트 정의
-const PostContainer = styled.div`
+const PhotoContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -132,56 +134,24 @@ const PostContainer = styled.div`
     border-radius: 10px;
 `;
 
-const PostHeader = styled.div`
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-`;
-
-const ProfileImg = styled.img`
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-`;
-
-const PostContent = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
-const Nickname = styled.span`
-    font-weight: bold;
-    margin-bottom: 5px;
-`;
-
-const PostText = styled.p`
-    margin: 0;
-`;
-
-const Main = () => {
+const Photo = () => {
     const nav = useNavigate();
 
     const [search, setSearch] = useState("");
-    const [posts, setPost] = useState(null);
+    const [photos, setPhotos] = useState(null);
 
     const onChange = (e) => {
         setSearch(e.target.value);
     };
 
-    // 샘플 게시물 데이터
-    // const posts = [
-    //     { id: 1, nickname: "User1", text: "이것은 첫 번째 게시물입니다." },
-    //     { id: 2, nickname: "User2", text: "여기는 두 번째 게시물입니다." },
-    // ];
-
-    const getPosts = async () => {
-        const posts = await axios.get("http://localhost:8080/getFeed");
-        setPost(posts.data);
+    const getPhotos = async () => {
+        const photos = await axios.get("http://localhost:8080/getImage");
+        console.log(photos.data)
+        setPhotos(photos.data);
     }
 
     useEffect(() => {
-        getPosts();
+        getPhotos();
     }, [])
 
     return (
@@ -224,25 +194,17 @@ const Main = () => {
                     </NavItem>
                 </Navigator>
                 <MainSection>
-                    {!posts &&
+                    {!photos &&
                         <>
-                        게시물 분류 중...
-                        </>
+                        Image Prediction Loading...
+                        </>                    
                     }
-                    {posts && posts.map((post) => {
-                        return(
-                            <PostContainer key={post.id}>
-                                <PostHeader>
-                                    <PostProfile>
-                                        <ProfileImg src={profile} alt="profile"/>
-                                        {/* <Nickname>{post.nickname}</Nickname> */}
-                                        <Nickname>SookmyungCleans</Nickname>
-                                    </PostProfile>
-                                </PostHeader>
-                                <PostContent>
-                                    <PostText>{post}</PostText>
-                                </PostContent>
-                            </PostContainer>
+                    {photos && violencePhotos.map((photo, idx) => {
+                        return (
+                            <>
+                            <div style={{fontSize: "26px"}}>Predicted: {photos[idx]}</div>
+                            <img style={{width: "400px", marginBottom: "15px"}} src={photo}></img>
+                            </>
                         )
                     })}
                 </MainSection>
@@ -251,4 +213,4 @@ const Main = () => {
     );
 }
 
-export default Main;
+export default Photo;
